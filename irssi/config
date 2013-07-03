@@ -1,0 +1,30 @@
+# Server to connect
+servers = (
+  {
+    address = "irc.corp.example.com";
+    chatnet = "example";
+    autoconnect = "yes";
+  }
+);
+
+#chatnet alias
+chatnets = { example = { type = "IRC"; nick = "jabir"; }; };
+
+channels = (
+  { name = "#grid-pe"; chatnet = "example"; autojoin = "yes"; },
+  { name = "#ops"; chatnet = "example"; autojoin = "yes"; }
+);
+
+settings = {
+  core = {
+    real_name = "Jabir";
+    user_name = "jabir";
+    nick = "jabir";
+    timestamp_format = "%H:%M:%S";
+  };
+  "fe-text" = { scrollback_time = "48h"; actlist_sort = "refnum"; };
+  "fe-common/core" = { autolog = "yes"; };
+};
+
+ignores = ( { level = "JOINS PARTS QUITS"; channels = ( "#perl" ); } );
+logs = { };
